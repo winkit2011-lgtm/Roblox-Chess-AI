@@ -1,27 +1,18 @@
 -- Start.lua
--- Chess AI System Entry
-
-print("==========")
-print("Chess AI Starting...")
-print("==========")
+print("Chess AI System Starting...")
 
 
-local ChessAI = require(script.Parent.ChessAI)
-local ChessRules = require(script.Parent.ChessRules)
-local ChessController = require(script.Parent.ChessController)
-local ChessGUI = require(script.Parent.ChessGUI)
-local ServerValidator = require(script.Parent.ServerValidator)
+local Main = loadstring(game:HttpGet(
+"https://raw.githubusercontent.com/winkit2011-lgtm/Roblox-Chess-AI/main/Main.lua"
+))()
 
 
-print("ChessAI Loaded")
-print("ChessRules Loaded")
-print("ChessController Loaded")
-print("ChessGUI Loaded")
-print("ServerValidator Loaded")
+print("Main Loaded")
 
 
-ChessController.SetLevel(5)
-ChessController.SetWaitTime(3)
-
-
-print("Chess AI System Ready")
+if Main.Start then
+	Main.Start()
+	print("Chess AI Started")
+else
+	print("Main Start function not found")
+end
